@@ -1,0 +1,25 @@
+.contactsList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    border: 1px solid;
+    border-color:rgb(51, 51, 51);
+    border-radius: 10px;
+    padding: 25px 10px;
+    background-color:#ffffffa0;
+}
+.listItem {
+display: flex;
+justify-content: space-between;
+width: 100%;
+border: 1px solid;
+border-color:rgb(51, 51, 51);
+border-radius: 10px;
+padding: 5px;
+background-color: rgba(196, 148, 233, 0.566);
+}
+.contact {
+font-weight: 400;
+font-size: 18px;
+}

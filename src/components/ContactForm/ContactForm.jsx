@@ -4,10 +4,11 @@ import React from 'react';
 
 export class ContactForm extends React.Component {
     state = {
-        name:''
+        name:'',
+        number:''
     }
     reset() {
-        this.setState({name: ''})
+        this.setState({name: '', number:''})
     }
     handleInput = e => {
         const {name, value} = e.currentTarget;
@@ -23,12 +24,12 @@ export class ContactForm extends React.Component {
     render() {
         return (
             <form className={css.form} onSubmit={this.handleSubmit}> 
-                <label className={css.nameLabel}>
+                <label className={css.label}>
                     Name
                     <input
                         onChange={this.handleInput}
                         value={this.state.name}
-                        className={css.nameInput}
+                        className={css.input}
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -36,6 +37,18 @@ export class ContactForm extends React.Component {
                         required
                     />
                  </label> 
+                 <label className={css.label}>Number
+                    <input
+                        onChange={this.handleInput}
+                        value={this.state.number}
+                        className={css.input}
+                        type="tel"
+                        name="number"
+                        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                        required
+                    />
+                </label>
                 <button className={css.addBtn}>Add Contact</button>
             </form>
             )
